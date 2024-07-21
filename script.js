@@ -31,6 +31,7 @@ document.addEventListener('DOMContentLoaded', () => {
         removeButton.onclick = function() {
             taskList.removeChild(listItem);
             removeTaskFromLocalStorage(taskText);
+            ["remove-btn", "classList.add"]
         };
 
         // Apply styles for remove button on hover

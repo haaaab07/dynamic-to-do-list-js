@@ -20,12 +20,25 @@ document.addEventListener('DOMContentLoaded', () => {
         // Create the remove button
         const removeButton = document.createElement('button');
         removeButton.textContent = "Remove";
-        removeButton.setAttribute('class', 'remove-btn');
+        removeButton.style.backgroundColor = '#ff6347';
+        removeButton.style.color = 'white';
+        removeButton.style.border = 'none';
+        removeButton.style.borderRadius = '4px';
+        removeButton.style.padding = '5px 10px';
+        removeButton.style.cursor = 'pointer';
 
         // Define the remove button behavior
         removeButton.onclick = function() {
             taskList.removeChild(listItem);
             removeTaskFromLocalStorage(taskText);
+        };
+
+        // Apply styles for remove button on hover
+        removeButton.onmouseover = function() {
+            removeButton.style.backgroundColor = '#d9534f';
+        };
+        removeButton.onmouseout = function() {
+            removeButton.style.backgroundColor = '#ff6347';
         };
 
         // Append the remove button to the list item and the list item to the task list
